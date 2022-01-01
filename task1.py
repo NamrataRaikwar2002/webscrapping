@@ -3,7 +3,7 @@ import requests
 import json
 res=requests.get("https://www.rottentomatoes.com/top/bestofrt/top_100_animation_movies/")
 soup=BeautifulSoup(res.text,"html.parser")
-def scrap_name():
+def scrape_top_list():
     movie_detail=[]
     main_div=soup.find('div', class_="body_main container")
     table1=main_div.find('table',class_="table")
@@ -14,10 +14,10 @@ def scrap_name():
         for j in td1:
             rank=tr2.find("td",class_="bold").get_text()[:-1]
             dic1["Rank"]=int(rank)
-            ratings=tr2.find("span", class_="tMeterScore").get_text()[:-1]
-            dic1["Ratings"]=float(ratings)
-            reviews=tr2.find("td",class_="right hidden-xs").get_text()
-            dic1["Reviews"]=int(reviews)
+            rating=tr2.find("span", class_="tMeterScore").get_text()[:-1]
+            dic1["Rating"]=float(rating)
+            review=tr2.find("td",class_="right hidden-xs").get_text()
+            dic1["Review"]=int(review)
             name=tr2.find("a",class_="unstyled articleLink")["href"][3:]
             dic1["Name"]=name
             url=tr2.find("a",class_="unstyled articleLink")["href"]
@@ -33,4 +33,4 @@ def scrap_name():
         json.dump(movie_detail,file,indent=4)
     return movie_detail
             
-scrap_name()
+scrape_top_list()
