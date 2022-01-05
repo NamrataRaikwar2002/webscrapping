@@ -1,0 +1,238 @@
+[
+    {
+        "Name": "Toy Story 4",
+        "Rating": "G",
+        "Genre": [
+            "Fantasy,",
+            "Adventure,",
+            "Animation,",
+            "Comedy,",
+            "Kids",
+            "&",
+            "family"
+        ],
+        "Language": [
+            "English"
+        ],
+        "Director": [
+            "Josh Cooley"
+        ],
+        "Producer": [
+            "Mark Nielsen,",
+            " Jonas Rivera,",
+            " Galyn Susman"
+        ],
+        "Runtime": 100
+    },
+    {
+        "Name": "Spider-Man: Into the Spider-Verse",
+        "Rating": "PG",
+        "Genre": [
+            "Fantasy,",
+            "Adventure,",
+            "Animation,",
+            "Action,",
+            "Comedy,",
+            "Kids",
+            "&",
+            "family"
+        ],
+        "Language": [
+            "English"
+        ],
+        "Director": [
+            "Bob Persichetti,",
+            "Peter Ramsey,",
+            "Rodney Rothman"
+        ],
+        "Producer": [
+            "Avi Arad,",
+            " Amy Pascal,",
+            " Phil Lord,",
+            " Chris Miller,",
+            " Christina Steinberg"
+        ],
+        "Runtime": 117
+    },
+    {
+        "Name": "Inside Out",
+        "Rating": "PG",
+        "Genre": [
+            "Fantasy,",
+            "Animation,",
+            "Comedy,",
+            "Kids",
+            "&",
+            "family"
+        ],
+        "Language": [
+            "English"
+        ],
+        "Director": [
+            "Pete Docter"
+        ],
+        "Producer": [
+            "Jonas Rivera"
+        ],
+        "Runtime": 95
+    },
+    {
+        "Name": "Coco",
+        "Rating": "PG",
+        "Genre": [
+            "Adventure,",
+            "Animation,",
+            "Music,",
+            "Comedy,",
+            "Kids",
+            "&",
+            "family"
+        ],
+        "Language": [
+            "English"
+        ],
+        "Director": [
+            "Lee Unkrich"
+        ],
+        "Producer": [
+            " Darla K. Anderson"
+        ],
+        "Runtime": 109
+    },
+    {
+        "Name": "Snow White and the Seven Dwarfs",
+        "Rating": "G",
+        "Genre": [
+            "Fantasy,",
+            "Animation,",
+            "Kids",
+            "&",
+            "family"
+        ],
+        "Language": [
+            "English"
+        ],
+        "Director": [
+            "David Hand"
+        ],
+        "Producer": [
+            "Walt Disney"
+        ],
+        "Runtime": 80
+    },
+    {
+        "Name": "Soul",
+        "Rating": "PG",
+        "Genre": [
+            "Animation,",
+            "Comedy,",
+            "Adventure,",
+            "Kids",
+            "&",
+            "family"
+        ],
+        "Language": [
+            "English"
+        ],
+        "Director": [
+            "Pete Docter"
+        ],
+        "Producer": [
+            " Dana Leigh Murray"
+        ],
+        "Runtime": 100
+    },
+    {
+        "Name": "Incredibles 2",
+        "Rating": "PG",
+        "Genre": [
+            "Adventure,",
+            "Animation,",
+            "Action,",
+            "Comedy,",
+            "Kids",
+            "&",
+            "family"
+        ],
+        "Language": [
+            "English"
+        ],
+        "Director": [
+            "Brad Bird"
+        ],
+        "Producer": [
+            "John Walker,",
+            " Nicole Paradis Grindle"
+        ],
+        "Runtime": 118
+    },
+    {
+        "Name": "Zootopia",
+        "Rating": "PG",
+        "Genre": [
+            "Animation,",
+            "Comedy,",
+            "Adventure,",
+            "Kids",
+            "&",
+            "family"
+        ],
+        "Language": [
+            "English"
+        ],
+        "Director": [
+            "Byron Howard,",
+            "Rich Moore"
+        ],
+        "Producer": [
+            "Clark Spencer"
+        ],
+        "Runtime": 108
+    },
+    {
+        "Name": "Paddington 2",
+        "Rating": "PG",
+        "Genre": [
+            "Comedy,",
+            "Adventure,",
+            "Kids",
+            "&",
+            "family"
+        ],
+        "Language": [
+            "English",
+            "(United",
+            "Kingdom)"
+        ],
+        "Director": [
+            "Paul King"
+        ],
+        "Producer": [
+            "David Heyman"
+        ],
+        "Runtime": 103
+    },
+    {
+        "Name": "Up",
+        "Rating": "PG",
+        "Genre": [
+            "Animation,",
+            "Comedy,",
+            "Adventure,",
+            "Kids",
+            "&",
+            "family"
+        ],
+        "Language": [
+            "English"
+        ],
+        "Director": [
+            "Pete Docter,",
+            "Bob Peterson"
+        ],
+        "Producer": [
+            "Jonas Rivera"
+        ],
+        "Runtime": 89
+    }
+]
