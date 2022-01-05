@@ -1,6 +1,23 @@
 {
-    "Name": "Ernest & C\u00e9lestine",
+    "Name": "Up",
+    "Rating": "PG",
+    "Genre": [
+        "Animation,",
+        "Comedy,",
+        "Adventure,",
+        "Kids",
+        "&",
+        "family"
+    ],
+    "Language": [
+        "English"
+    ],
     "Director": [
-        "Vincent Patar"
-    ]
+        "Pete Docter,",
+        "Bob Peterson"
+    ],
+    "Producer": [
+        "Jonas Rivera"
+    ],
+    "Runtime": 89
 }

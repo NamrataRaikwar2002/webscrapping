@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 import json
-url="https://www.rottentomatoes.com/m/ernest_and_celestine"
+url="https://www.rottentomatoes.com/m/toy_story_4"
 
 def scrape_movie_details(movie_url):
     req=requests.get(movie_url)
@@ -43,7 +43,6 @@ def scrape_movie_details(movie_url):
             detail_dic["Director"]=name_surname_list
         elif "Producer:" in spi:
             pro=spi[1:]
-            print(pro)
             if len(pro)%2==0:
                 i=0
                 producer_list=[]
@@ -65,7 +64,6 @@ def scrape_movie_details(movie_url):
                 while n<=-1:
                     oname=oname+" "+pro[n]
                     n=n+1
-                print(oname)
                 i=0
                 producer_list=[]
                 while i<len(pro)-3:
@@ -80,11 +78,10 @@ def scrape_movie_details(movie_url):
                     producer_list.append(pro_name)
                     i=i+2
                 producer_list.append(oname)
-                print(producer_list)
                 detail_dic["Producer"]=producer_list
-    print(detail_dic)
     with open("task4.json","w+") as file:
         json.dump(detail_dic,file,indent=4)
+    return detail_dic
         
 scrape_movie_details(url)
 
