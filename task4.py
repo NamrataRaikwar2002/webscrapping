@@ -82,7 +82,6 @@ def scrape_movie_details(movie_url):
                 producer_list.append(oname)
                 print(producer_list)
                 detail_dic["Producer"]=producer_list
-                
     print(detail_dic)
     with open("task4.json","w+") as file:
         json.dump(detail_dic,file,indent=4)
