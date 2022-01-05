@@ -17,9 +17,8 @@ def  group_by_year(movies):
                 if detail not in same_year_list:
                     same_year_list.append(detail)
         yeargroup_dic[key_year]=same_year_list        
-        print(yeargroup_dic)
-    with open("task2.json","w+") as file2:
-        json.dump(yeargroup_dic,file2,indent=4)
+        with open("task2.json","w+") as file2:
+            json.dump(yeargroup_dic,file2,indent=4)
     return yeargroup_dic
                 
 
