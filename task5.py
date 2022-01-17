@@ -14,6 +14,6 @@ def get_movie_list_details(movies_list):
     
     
 top_movie=scrape_top_list()
-get_movie_list_details(top_movie[:10])
+get_movie_list_details(top_movie)
 
 

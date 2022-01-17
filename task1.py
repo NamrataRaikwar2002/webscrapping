@@ -12,8 +12,10 @@ def scrape_top_list():
         dic1={}
         td1=tr2.find_all('td')
         for j in td1:
+            # print(j)
             rank=tr2.find("td",class_="bold").get_text()[:-1]
             dic1["Rank"]=int(rank)
+            # print(rank)
             rating=tr2.find("span", class_="tMeterScore").get_text()[:-1]
             dic1["Rating"]=float(rating)
             review=tr2.find("td",class_="right hidden-xs").get_text()
@@ -33,4 +35,4 @@ def scrape_top_list():
         json.dump(movie_detail,file,indent=4)
     return movie_detail
             
-scrape_top_list()
+print(scrape_top_list())

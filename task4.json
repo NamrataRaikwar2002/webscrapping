@@ -1,23 +1,17 @@
 {
-    "Name": "Up",
-    "Rating": "PG",
+    "Name": "Chicken Run",
+    "Rating": "G",
     "Genre": [
-        "Animation,",
-        "Comedy,",
-        "Adventure,",
         "Kids",
-        "&",
-        "family"
+        "family",
+        "Adventure",
+        "Comedy",
+        "Animation"
     ],
-    "Language": [
-        "English"
-    ],
+    "Language": "English",
     "Director": [
-        "Pete Docter,",
-        "Bob Peterson"
+        "Peter Lord",
+        "Nick Park"
     ],
-    "Producer": [
-        "Jonas Rivera"
-    ],
-    "Runtime": 89
+    "Runtime": 85
 }

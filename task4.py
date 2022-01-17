@@ -1,3 +1,4 @@
+from os import name
 from bs4 import BeautifulSoup
 import requests
 import json
@@ -12,13 +13,32 @@ def scrape_movie_details(movie_url):
     detail_dic["Name"]=movie_name
     for detail in li:
         d=detail.text
-        spi=d.split()
+        if "Producer" in d:
+            d=d.replace("\n","")
+            spi=d.split(":")
+        else:
+            spi=d.split()
+            
+        
+        # print(spi)
         if "Rating:" in spi:
             detail_dic["Rating"]=spi[1]                               
         elif "Genre:" in spi:
-            detail_dic["Genre"]=spi[1:]
+            gen_list=[]
+            gen=spi[1:]
+            for g in gen:
+                if "," in g:
+                    ge=g[:-1]
+                    gen_list.append(ge)
+                else:
+                    if g=="&":
+                        continue
+                    else:
+                        gen_list.append(g)
+            detail_dic["Genre"]=gen_list
+            
         elif "Language:" in spi:
-            detail_dic["Language"]=spi[2:]
+            detail_dic["Language"]=spi[2]
         elif "Runtime:" in spi:
             time=spi[1:]
             hour=int(time[0][:-1])
@@ -28,57 +48,70 @@ def scrape_movie_details(movie_url):
         elif "Director:" in spi:
             dnamelist=spi[1:]
             i=0
+            name_surname=""
             name_surname_list=[]
             while i<len(dnamelist):
-                j=i
-                name_surname=""
-                while j<i+2:
-                    if j==i:
-                        name_surname=name_surname+dnamelist[j]
-                    else:
-                        name_surname=name_surname+" "+dnamelist[j]
-                    j=j+1
-                name_surname_list.append(name_surname)
-                i=i+2
-            detail_dic["Director"]=name_surname_list
-        elif "Producer:" in spi:
-            pro=spi[1:]
-            if len(pro)%2==0:
-                i=0
-                producer_list=[]
-                while i<len(pro):
-                    j=i
-                    pro_name=""
-                    while j<i+2:
-                        if j==0:
-                            pro_name=pro_name+pro[j]
-                        else:
-                            pro_name=pro_name+" "+pro[j]
-                        j=j+1
-                    producer_list.append(pro_name)
-                    i=i+2
-                detail_dic["Producer"]=producer_list
-            else:
-                oname=""
-                n=-3
-                while n<=-1:
-                    oname=oname+" "+pro[n]
-                    n=n+1
-                i=0
-                producer_list=[]
-                while i<len(pro)-3:
-                    j=i
-                    pro_name=""
-                    while j<i+2:
-                        if j==0:
-                            pro_name=pro_name+pro[j]
-                        else:
-                            pro_name=pro_name+" "+pro[j]
-                        j=j+1
-                    producer_list.append(pro_name)
-                    i=i+2
-                producer_list.append(oname)
-                detail_dic["Producer"]=producer_list
+                name_surname=name_surname+dnamelist[i]+" "
+                # print(len(name_surname))
+                
+                
+                    # else:
+                        # name_surname=name_surname+" "+dnamelist[j]
+                i=i+1
+            split_name=name_surname.split(",")
+            strip_name=[]
+            for name in split_name:
+                strip_name.append(name.strip())
+            # print(strip_name)
+                
+            
+            # print(split_name)
+            # name_surname_list.append(split_name)
+            # print(name_surname_list)
+            
+            detail_dic["Director"]=strip_name
+            # print(detail_dic)
+        elif "Producer" in spi:
+            producers=spi[1].split(":")
+            # print(producers)
+            
+            # pro=spi[1:]
+            # if len(pro)%2==0:
+            #     i=0
+            #     producer_list=[]
+            #     while i<len(pro):
+            #         j=i
+            #         pro_name=""
+            #         while j<i+2:
+            #             if j==0:
+            #                 pro_name=pro_name+pro[j]
+            #             else:
+            #                 pro_name=pro_name+" "+pro[j]
+            #             j=j+1
+            #         producer_list.append(pro_name)
+            #         i=i+2
+            #     detail_dic["Producer"]=producer_list
+            # else:
+            #     oname=""
+            #     n=-3
+            #     while n<=-1:
+            #         oname=oname+" "+pro[n]
+            #         n=n+1
+            #     i=0
+            #     producer_list=[]
+            #     while i<len(pro)-3:
+            #         j=i
+            #         pro_name=""
+            #         while j<i+2:
+            #             if j==0:
+            #                 pro_name=pro_name+pro[j]
+            #             else:
+            #                 pro_name=pro_name+" "+pro[j]
+            #             j=j+1
+            #         producer_list.append(pro_name)
+            #         i=i+2
+            #     producer_list.append(oname)
+                # detail_dic["Producer"]=spi[1:]
     with open("task4.json","w+") as file:
         json.dump(detail_dic,file,indent=4)
     return detail_dic

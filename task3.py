@@ -10,12 +10,9 @@ def group_by_decade(movies):
         decade=year-mod
         if decade not in year_list:
             year_list.append(decade)
-    print(year_list)
     year_list.sort()
-    print(year_list)
     for dec in year_list:
         decade_dic[dec]=[]
-    print(decade_dic)
     for dd in decade_dic:
         dec_year=dd+9
         for y in movies:
